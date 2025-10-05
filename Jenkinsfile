@@ -11,7 +11,7 @@ pipeline {
   stages {
     stage('Checkout Code') {
       steps {
-        git url: 'https://github.com/sangammukherjee/devops-youtube-course-2025.git', branch: 'main'
+        git url: 'https://github.com/amitweb2012/mern-docker.git', branch: 'main'
       }
     }
 
@@ -20,9 +20,9 @@ pipeline {
         sh '''
           mkdir -p server
           cat > server/.env <<EOF
-PORT=$PORT
-MONGO_URI=$MONGO_URI
-EOF
+          PORT=$PORT
+          MONGO_URI=$MONGO_URI
+          EOF
         '''
       }
     }
