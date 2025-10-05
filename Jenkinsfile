@@ -8,6 +8,11 @@ pipeline {
     MONGO_URI = "mongodb://mongo:27017/taskdb"
   }
 
+  docker {
+    image 'docker:24.0.5'  // choose a docker version
+    args '--privileged -v /var/run/docker.sock:/var/run/docker.sock'
+  }
+
   stages {
     stage('Checkout Code') {
       steps {
